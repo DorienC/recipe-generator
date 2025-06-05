@@ -13,10 +13,10 @@ function generateRecipe(event) {
 
   var instructionsInput = document.querySelector("#user-instructions");
   var apiKey = "f959a3f02e57eeo3t4b616bd0ba0ddb5";
-  var apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${apiPrompt}&context=${apiContext}&key=${apiKey}`;
   var apiPrompt = `User instructions: Generate a healthy recipe that I can eat for ${instructionsInput.value}`;
   var apiContext =
-    "you're a sporter who likes to eat healthy. Your mission is to generate easy recipes that only take 6 ingredients. Make sure to follow the user instructions.";
+    "you're a sporter who likes to eat healthy. Your mission is to generate easy recipes that only take up to 6 ingredients. Display the ingredients first and then the recipe in up to 8 steps. Make sure to follow the user instructions. Show each ingredient and each step of the recipe in a new line using <br/>. start with the title of the recipe, add a <br/>, add the ingredient title and list, add <br/>, add the title and list of recipe steps. Add a <br/> after the last step of the recipe. End with something like 'enjoy your meal'";
+  var apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${apiPrompt}&context=${apiContext}&key=${apiKey}`;
 
   console.log("generating recipe");
   console.log(`prompt = ${apiPrompt}`);
